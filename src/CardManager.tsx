@@ -16,6 +16,10 @@ function CardManager() {
     returnCard,
     handSize,
   } = useCardManager();
+
+  const isHandFull = handSize === cardsInHand.length;
+  const isDeckEmpty = deck.length === 0;
+  const isDrawDisabled = isHandFull || isDeckEmpty;
   return (
     <main>
       <header>
@@ -43,7 +47,9 @@ function CardManager() {
       <div>
         <button onClick={reset}>Reset</button>
         <button onClick={shuffleDeck}>Shuffle</button>
-        <button onClick={drawCard}>Draw</button>
+        <button onClick={drawCard} disabled={isDrawDisabled}>
+          Draw
+        </button>
       </div>
       <div
         className={`${styles.cardsInHand} ${

@@ -14,9 +14,12 @@ export const tactical: SecondaryObjective[] = [
           In your Shooting phase, you can select one or more units from your
           army that are not Battle-shocked and are eligible to shoot. Until the
           end of your turn, the units you selected are not eligible to shoot or
-          declare a charge.\n\n At the end of your turn, each corner of the
-          battlefield that has one or more of these selected units wholly within
-          9” of it is scanned by your army.
+          declare a charge.
+        </p>
+        <p>
+          At the end of your turn, each corner of the battlefield that has one
+          or more of these selected units wholly within 9” of it is scanned by
+          your army.
         </p>
         <p>
           If one or more corners are scanned by your army, this Secondary
@@ -455,6 +458,9 @@ function managerReducer(state: ReducerState, action: CardAction): ReducerState {
       const drawDeck = [...state.deck];
       const newHand = [...state.hand];
       for (let i = state.hand.length; i < state.handSize; i++) {
+        if (drawDeck.length === 0) {
+          break;
+        }
         const card = drawDeck.pop();
         if (!card) {
           throw new Error("draw: Card is falsey. This should never happen");
