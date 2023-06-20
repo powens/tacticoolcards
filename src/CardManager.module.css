@@ -1,0 +1,12 @@
+.cardsInHand {
+    display: grid;
+    gap: 1em;
+}
+
+.handSize2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.handSize3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
