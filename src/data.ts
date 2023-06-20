@@ -1,4 +1,4 @@
-import { useCallback, useReducer, useMemo } from "react";
+import { useCallback, useReducer, useMemo, useEffect } from "react";
 
 export type SecondaryObjective = {
   name: string;
@@ -234,8 +234,26 @@ function managerReducer(state: ReducerState, action: CardAction): ReducerState {
   }
 }
 
+const STORAGE_KEY = "cardState";
+
 export function useCardManager() {
-  const [state, dispatch] = useReducer(managerReducer, initialState);
+  const [state, dispatch] = useReducer(
+    managerReducer,
+    initialState,
+    (i: any) => {
+      const storedState = localStorage.getItem(STORAGE_KEY);
+      if (!storedState) {
+        return i;
+      }
+      console.debug("Loading from localStorage");
+      const parsedState = JSON.parse(storedState);
+      if (!parsedState) {
+        return;
+      }
+
+      return parsedState;
+    }
+  );
   const reset = useCallback(() => {
     dispatch({ type: "reset" });
   }, []);
@@ -254,10 +272,13 @@ export function useCardManager() {
   const changeHandSize = useCallback((newSize: number) => {
     dispatch({ type: "changeHandSize", handSize: newSize });
   }, []);
-
   const cardsInHand: SecondaryObjective[] = useMemo(() => {
     return state.hand.map((cardName) => cardsByName[cardName]);
   }, [state.hand]);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }, [state]);
 
   return {
     cardsInHand,
