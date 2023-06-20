@@ -1,4 +1,11 @@
 .App {
-  text-align: center;
 }
 
+
+button {
+  font-size: 1.3em;
+}
+
+body {
+  padding: 1em;
+}

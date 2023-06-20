@@ -21,8 +21,8 @@ function CardManager() {
       <header>
         <h1>Tacticool Card Manager</h1>
       </header>
-      <section>
-        <span>
+      <section className={styles.controls}>
+        <div>
           <label htmlFor="handSize">Hand Size</label>
           <select
             id="handSize"
@@ -32,9 +32,13 @@ function CardManager() {
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
-        </span>
-        <span>Deck Size:</span> <span>{deck.length}</span>
-        <span>Discard Pile:</span> <span>{discardPile.length}</span>
+        </div>
+        <div>
+          <span>Deck Size:</span> <span>{deck.length}</span>
+        </div>
+        <div>
+          <span>Discard Pile:</span> <span>{discardPile.length}</span>
+        </div>
       </section>
       <div>
         <button onClick={reset}>Reset</button>

@@ -1,5 +1,7 @@
 .card {
     border: 1px solid black;
+    display: grid;
+    grid-template-rows: fit-content(32px) 1fr fit-content(32px);
 }
 
 .header {
@@ -7,6 +9,7 @@
     font-size: 1.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    text-align: center;
 }
 
 .body {
@@ -15,4 +18,7 @@
 
 .footer {
     padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
 }
