@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tacticoolcards/static/css/main.f9f27697.css",
-    "main.js": "/tacticoolcards/static/js/main.43233bb1.js",
+    "main.css": "/tacticoolcards/static/css/main.3f08d2b2.css",
+    "main.js": "/tacticoolcards/static/js/main.2262c03c.js",
     "static/js/787.96d9d8d8.chunk.js": "/tacticoolcards/static/js/787.96d9d8d8.chunk.js",
     "index.html": "/tacticoolcards/index.html",
-    "main.f9f27697.css.map": "/tacticoolcards/static/css/main.f9f27697.css.map",
-    "main.43233bb1.js.map": "/tacticoolcards/static/js/main.43233bb1.js.map",
+    "main.3f08d2b2.css.map": "/tacticoolcards/static/css/main.3f08d2b2.css.map",
+    "main.2262c03c.js.map": "/tacticoolcards/static/js/main.2262c03c.js.map",
     "787.96d9d8d8.chunk.js.map": "/tacticoolcards/static/js/787.96d9d8d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9f27697.css",
-    "static/js/main.43233bb1.js"
+    "static/css/main.3f08d2b2.css",
+    "static/js/main.2262c03c.js"
   ]
 }
